@@ -2,7 +2,6 @@ import { Burger, createStyles, Drawer, MediaQuery, Title, useMantineTheme } from
 import { useWindowScroll } from '@mantine/hooks';
 import { useState } from 'react';
 import { DarkThemeToggleSwitch } from '../DarkThemeToggleSwitch/DarkThemeToggleSwitch';
-import SectionSelection from '../SectionSelection/SectionSelection';
 
 const useStyles = createStyles((theme) => ({
     navContainer: {
@@ -39,7 +38,7 @@ const TopNavbar = () => {
 
     return (
         <nav className={`${classes.navContainer} ${scroll.y > 0 && classes.navShadow}`}>
-            <Title size='md'>Resume King</Title>
+            <Title size='md'>Travel Buddy</Title>
             <DarkThemeToggleSwitch />
             <MediaQuery smallerThan='lg' styles={{display:'block'}}>
                 <Burger opened={menuOpen} onClick={() => setMenuOpen(c => !c)} className={classes.menuIcon} />
@@ -56,7 +55,7 @@ const TopNavbar = () => {
                     className={classes.menuIcon}
                     onClose={() => setMenuOpen(false)}
                     position='right'>
-                    <SectionSelection />
+                    
                 </Drawer>
             </MediaQuery>
         </nav>
